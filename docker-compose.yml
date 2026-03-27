@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ci3-app
+    ports:
+      - "8010:80"
+    environment:
+      # These environment variables can also be set in the Dokploy dashboard.
+      - CI_ENV=production
+      - BASE_URL=http://localhost:8010/
+      - DB_HOSTNAME=localhost
+      - DB_USERNAME=root
+      - DB_PASSWORD=
+      - DB_DATABASE=ci_database
+    # volumes:
+    #   - .:/var/www/html/ # Use this for local development only.
+    restart: always
+
+# Note: No MySQL service is added here as requested.
+# Dokploy will automatically handle the build and expose port 8010.
+# Make sure to configure your application/config/database.php 
+# to use external database credentials from environment variables.

@@ -1,0 +1,17 @@
+.git
+.github
+.editorconfig
+.gitattributes
+build-release.sh
+contributing.md
+DCO.txt
+license.txt
+phpdoc.dist.xml
+readme.rst
+tests/
+user_guide_src/
+docker-compose.yml
+Dockerfile
+.dockerignore
+vendor/
+node_modules/
